@@ -1,0 +1,81 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "cbe2621a-7518-4228-92e2-dfc3f2c84397",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "38830a98-8f53-4ae2-ba7e-15f6b1b8710a",
+      "name": "Webhook",
+      "webhookId": "cbe2621a-7518-4228-92e2-dfc3f2c84397"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-5-MINI"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "take the data received from the webhook and generate an executive summary of 3 key points for a business report \n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        224,
+        0
+      ],
+      "id": "660f23a7-f428-4cf4-8ccd-08b1a1d870c5",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "Ta8l4MCRW2MBjGS3",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "ac6d0805-546d-4532-995e-d47c9c15295a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "adbfad2c9a473e73d3d9c5fa48a80d6dda332cbb11feea1be7b7f4249aa9ba73"
+  },
+  "nodeGroups": [],
+  "id": "ptLCeXjpPyTF6Od1",
+  "tags": []
+}
