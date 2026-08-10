@@ -28,11 +28,10 @@ An automated n8n workflow designed to process incoming webhook events and levera
 ---
 <img width="1470" height="956" alt="Screenshot 2026-08-09 alle 21 17 06" src="https://github.com/user-attachments/assets/66156cfa-5e4b-4bca-9d20-d330a652b071" />
 
-## ⚡ Quick Start
 ### 📄 Available Workflows (JSON)
-I file blueprint pronti da importare su n8n sono disponibili direttamente nella root di questa repository:
-- `ai-executive-summarizer.json`
-- `ai-lead-scoring-agent.json`
+* 🔗 [AI Executive Summarizer Workflow](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/ai-executive-summarizer.json)
+* 🔗 [AI Lead Scoring Agent Workflow](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/ai-lead-scoring-agent.json)
+
 
 
 1. **Clone Repository:**
