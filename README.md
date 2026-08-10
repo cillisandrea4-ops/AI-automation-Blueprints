@@ -30,3 +30,4 @@ Below are the core product interface mockups designed in Figma for the platform:
 | Nearby Offers | Card Swipe Detail | Invite Friends |
 | :---: | :---: | :---: |
 | <img src="./assets/nearby-location.png" width="100%"> | <img src="./assets/card-detail-swipe.png" width="100%"> | <img src="./assets/invite-friends.png" width="100%"> |
+
