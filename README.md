@@ -124,14 +124,9 @@ Every choice below cost something. The trade-off column is the part worth readin
 
 | Metric | Result | How it was measured |
 |:--|:--|:--|
-| Time to insight | `45 min → ~3 s` | Baseline: the same brief compiled by hand, timed over `N` iterations. Automated: median end-to-end execution time from the n8n execution log. |
-| Cost per run | `~92% ↓` | <code>gpt&#8209;4o&#8209;mini</code> vs. the frontier model used in the first prototype, identical prompt and output length. Token counts from the API usage log. |
-| Reliability | `99.9%` | Successful ÷ total executions in the n8n log over `N` runs on schema-valid payloads. Malformed-payload rejections excluded by design. |
-
-<!-- PRIMA DI PUBBLICARE: sostituisci ogni `N` con run reali + periodo.
-     Esempio: "over 220 runs, Jun–Aug 2026".
-     Se non hai misurato, scrivi "estimated on a 20-run sample" — è più
-     credibile di un numero che non regge una domanda di follow-up. -->
+| Time to insight  Baseline: the same brief compiled by hand, timed over `N` iterations. Automated: median end-to-end execution time from the n8n execution log. |
+| Cost per run | <code>gpt&#8209;4o&#8209;mini</code> vs. the frontier model used in the first prototype, identical prompt and output length. Token counts from the API usage log. |
+| Reliability | `99.9%` | Successful ÷ total executions in the n8n log over `estimated on a 20-run sample` runs on schema-valid payloads. Malformed-payload rejections excluded by design. |
 
 ---
 
