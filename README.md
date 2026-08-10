@@ -219,21 +219,6 @@ AI-automation-Blueprints/
 
 ---
 
-## Related work — NAO! product design
-
-Interface work from **NAO!**, the consumer product I co-found. A different domain from the blueprints above, included because it's the same discipline: designing the surface and shipping the system underneath it.
-
-| Home Screen | User Profile | Verdict & AI Decision |
-|:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/806b7114-73f4-4a8a-91cc-8cf7bf6d0e24" width="100%"> | <img src="https://github.com/user-attachments/assets/78bef349-3795-41c1-880b-c038349a9f13" width="100%"> | <img src="https://github.com/user-attachments/assets/a9580620-4c50-4f8b-b453-7156db64a832" width="100%"> |
-
-| Nearby Offers | Card Swipe Detail | Invite Friends |
-|:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/820d0d7e-845e-487f-b26c-df71d98dc64c" width="100%"> | <img src="https://github.com/user-attachments/assets/cf1d1e2c-6821-47c8-8ea7-495aceffdad5" width="100%"> | <img src="https://github.com/user-attachments/assets/5a247a05-c127-47bd-a010-c946f021edff" width="100%"> |
-
-<sub>NAO! launches in Italy — screenshots show the product in its launch-market language. Copy is externalized for future locales.</sub>
-
----
 
 ## Stack
 
