@@ -202,7 +202,7 @@ AI-automation-Blueprints/
 | File | What's inside |
 |:--|:--|
 | [`docs/architecture.md`](./docs/architecture.md) | Node-by-node walkthrough, error handling, retry and dead-letter logic |
-| [`docs/benchmarks.md`](./docs/benchmarks.md) | Raw timing and token-cost data behind the Results table |
+| [`docs/benchmarks.md`](docs/benchmarks.md) | Raw timing and token-cost data behind the Results table |
 | [`prompts/executive-summary.md`](./prompts/executive-summary.md) | System prompt and the JSON output contract enforced downstream |
 | [`workflows/`](./workflows) | Import-ready blueprint JSON files |
 | [`.env.example`](.env.example) | Required environment variables |
