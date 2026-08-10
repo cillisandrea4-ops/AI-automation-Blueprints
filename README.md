@@ -231,7 +231,7 @@ Interface work from **NAO!**, the consumer product I co-found. A different domai
 |:---:|:---:|:---:|
 | <img src="https://github.com/user-attachments/assets/820d0d7e-845e-487f-b26c-df71d98dc64c" width="100%"> | <img src="https://github.com/user-attachments/assets/cf1d1e2c-6821-47c8-8ea7-495aceffdad5" width="100%"> | <img src="https://github.com/user-attachments/assets/5a247a05-c127-47bd-a010-c946f021edff" width="100%"> |
 
-<sub>Screenshots show the Italian localization — NAO!'s launch market. The product ships with an English locale; copy is externalized, not hardcoded.</sub>
+<sub>NAO! launches in Italy — screenshots show the product in its launch-market language. Copy is externalized for future locales.</sub>
 
 ---
 
@@ -266,8 +266,8 @@ Co-founder & CEO — AI-powered consumer products.
 BSc Business Information & Communication Management, SAA — University of Turin.
 I work where product, automation and go-to-market overlap.
 
-[![LinkedIn](https://img.shields.io/badge/linkedin-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/IL-TUO-HANDLE)
-[![Email](https://img.shields.io/badge/email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:LA-TUA@EMAIL.com)
+[![LinkedIn](https://img.shields.io/badge/linkedin-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andreacillis)
+[![Email](https://img.shields.io/badge/email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:cillisandrea4@gmail.com)
 [![GitHub](https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/cillisandrea4-ops)
 
 <sub>If a blueprint saves you an afternoon, a star is appreciated.</sub>
