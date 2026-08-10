@@ -117,17 +117,18 @@ Every choice below cost something. The trade-off column is the part worth readin
 
 ---
 
-## Results
+## Design goals
 
-> [!IMPORTANT]
-> Numbers without methodology are noise. Each figure states how it was produced, so it can be reproduced or challenged. Raw measurement data lives in [`docs/benchmarks.md`](./docs/benchmarks.md).
+This blueprint replaces a manual weekly reporting routine. What it is built to achieve, and how each claim can be checked once the workflow has run at volume:
 
-| Metric | Result | How it was measured |
+| Goal | Why it matters | How it will be verified |
 |:--|:--|:--|
-| Time to insight  Baseline: the same brief compiled by hand, timed over `N` iterations. Automated: median end-to-end execution time from the n8n execution log. |
-| Cost per run | <code>gpt&#8209;4o&#8209;mini</code> vs. the frontier model used in the first prototype, identical prompt and output length. Token counts from the API usage log. |
-| Reliability | `99.9%` | Successful ÷ total executions in the n8n log over `estimated on a 20-run sample` runs on schema-valid payloads. Malformed-payload rejections excluded by design. |
+| Cut time to insight | The manual version of this brief takes ~45 minutes of reading dashboards and writing. | Median end-to-end duration from the n8n execution log, against a stopwatch baseline of the manual process. |
+| Keep cost per run low | A reporting job that runs weekly forever should not cost like a research task. | Token counts from the OpenAI usage dashboard, `gpt-4o-mini` against the frontier model used in the first prototype. |
+| Fail loudly, never silently | A brief that quietly drops the worst number is more dangerous than no brief. | A dedicated error flow alerts by email on any failed run. Success rate from the n8n execution log. |
 
+> [!NOTE]
+> Measured results will be published in [`docs/benchmarks.md`](./docs/benchmarks.md) once the workflow has run at volume. No performance figures are claimed here until then.
 ---
 
 ## Quickstart
