@@ -34,7 +34,7 @@
 | # | Blueprint | Problem it solves | Trigger | Model | Status |
 |:-:|:--|:--|:--|:--|:--|
 | 01 | **[AI Executive Summarizer](./workflows/ai-executive-summarizer.json)** | Turns raw webhook payloads into a 3-bullet executive brief | Webhook | `gpt-4o-mini` | ![](https://img.shields.io/badge/live-00C853?style=flat-square) |
-| 02 | **[AI Lead Scoring Agent](./workflows/ai-lead-scoring-agent.json)** | Scores inbound leads 0–100 and routes them by intent | Webhook / CRM | `gpt-4o-mini` | ![](https://img.shields.io/badge/live-00C853?style=flat-square) |
+| 02 | **[AI Lead Scoring Agent](./workflows/ai-lead-scoring-agent.json⁠)** | Scores inbound leads 0–100 and routes them by intent | Webhook / CRM | `gpt-4o-mini` | ![](https://img.shields.io/badge/live-00C853?style=flat-square) |
 | 03 | **Churn Signal Watcher** | Flags at-risk accounts from product-usage drops | Cron | `gpt-4o-mini` | ![](https://img.shields.io/badge/planned-9E9E9E?style=flat-square) |
 
 ---
