@@ -31,8 +31,8 @@ An automated n8n workflow designed to process incoming webhook events and levera
 ## ⚡ Quick Start
 
 ### 🔗 Direct Workflow Downloads (JSON)
-- 📄 [AI Executive Summarizer Workflow](./ai-executive-summarizer.json)
-- 📄 [AI Lead Scoring Agent Workflow](./ai-lead-scoring-agent.json)
+* 📄 [AI Executive Summarizer Workflow](ai-executive-summarizer.json)
+* 📄 [AI Lead Scoring Agent Workflow](ai-lead-scoring-agent.json)
 
 
 1. **Clone Repository:**
