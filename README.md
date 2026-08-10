@@ -25,9 +25,8 @@ Below are the core product interface mockups designed in Figma for the platform:
 
 | Home Screen | User Profile | Verdict & AI Decision |
 | :---: | :---: | :---: |
-| <img src="./assets/Home-screen.png" width="100%"> | <img src="./assets/user-profile.png" width="100%"> | <img src="./assets/verdict-screen.png" width="100%"> |
+| <img src="assets/Home-screen.png" width="100%"> | <img src="assets/user-profile.png" width="100%"> | <img src="assets/verdict-screen.png" width="100%"> |
 
 | Nearby Offers | Card Swipe Detail | Invite Friends |
 | :---: | :---: | :---: |
-| <img src="./assets/nearby-location.png" width="100%"> | <img src="./assets/card-detail-swipe.png" width="100%"> | <img src="./assets/invite-friends.png" width="100%"> |
-
+| <img src="assets/nearby-location.png" width="100%"> | <img src="assets/card-detail-swipe.png" width="100%"> | <img src="assets/invite-friends.png" width="100%"> |
