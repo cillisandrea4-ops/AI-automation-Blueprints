@@ -1,0 +1,256 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "c3bb3194-2d15-40bc-9c46-91e391622a39",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "bcf38427-03c7-46f9-9c5c-69c37225f447",
+      "name": "Webhook",
+      "webhookId": "c3bb3194-2d15-40bc-9c46-91e391622a39"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c68bae79-ac75-451b-ae91-3d16b8fab907",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        336
+      ],
+      "id": "37b18abb-65ae-4116-b8d5-34267c699487",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "=⁠={{ $json.score }}",
+                    "rightValue": 80,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    },
+                    "id": "477ae2ee-7293-4401-bb4a-6ef3a9848887"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "14d76945-ac22-44d5-8145-39bc1044af07",
+                    "leftValue": "=⁠={{ $json.score }}⁠",
+                    "rightValue": 80,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        0
+      ],
+      "id": "cf07582c-83b1-4f5f-89fc-4ef34ba3ac4b",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        736,
+        -96
+      ],
+      "id": "766e53f6-3150-4996-8212-c193891e2f7e",
+      "name": "Send a message",
+      "webhookId": "9fc34ea1-0d34-4353-bce1-50dd3118431a"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "dataSourceId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 3,
+      "position": [
+        736,
+        96
+      ],
+      "id": "efa6232f-3a9e-4624-9b9c-17a20839a54f",
+      "name": "Create a database page"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        192,
+        336
+      ],
+      "id": "aa8a15e2-ff5f-4a60-9940-8a0ab4c3a96f",
+      "name": "Send a message1",
+      "webhookId": "0d7309d9-a188-4dfe-9442-331cf31f30ea"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        112,
+        160
+      ],
+      "id": "e9f2b59c-032c-4f27-8afc-49d8ec64dff8",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "Ta8l4MCRW2MBjGS3",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "d914339b-1ad6-412f-8a3c-9ffda4c0eda4",
+  "meta": {
+    "instanceId": "adbfad2c9a473e73d3d9c5fa48a80d6dda332cbb11feea1be7b7f4249aa9ba73"
+  },
+  "nodeGroups": [],
+  "id": "6C5jYw3zpx3JUyc8",
+  "tags": []
+}
