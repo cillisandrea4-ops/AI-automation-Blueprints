@@ -23,10 +23,11 @@ An automated n8n workflow designed to process incoming webhook events and levera
 
 Below are the core product interface mockups designed in Figma for the platform:
 
+
 | Home Screen | User Profile | Verdict & AI Decision |
 | :---: | :---: | :---: |
-| <img src="assets/Home-screen.png" width="100%"> | <img src="assets/user-profile.png" width="100%"> | <img src="assets/verdict-screen.png" width="100%"> |
+| <img src="https://github.com/user-attachments/assets/806b7114-73f4-4a8a-91cc-8cf7bf6d0e24" width="100%"> | <img src="https://github.com/user-attachments/assets/78bef349-3795-41c1-880b-c038349a9f13" width="100%"> | <img src="https://github.com/user-attachments/assets/a9580620-4c50-4f8b-b453-7156db64a832" width="100%"> |
 
 | Nearby Offers | Card Swipe Detail | Invite Friends |
 | :---: | :---: | :---: |
-| <img src="assets/nearby-location.png" width="100%"> | <img src="assets/card-detail-swipe.png" width="100%"> | <img src="assets/invite-friends.png" width="100%"> |
+| <img src="https://github.com/user-attachments/assets/820d0d7e-845e-487f-b26c-df71d98dc64c" width="100%"> | <img src="https://github.com/user-attachments/assets/cf1d1e2c-6821-47c8-8ea7-495aceffdad5" width="100%"> | <img src="https://github.com/user-attachments/assets/5a247a05-c127-47bd-a010-c946f021edff" width="100%"> |
