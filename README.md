@@ -25,9 +25,8 @@ Below are the core product interface mockups designed in Figma for the platform:
 
 | Home Screen | User Profile | Verdict & AI Decision |
 | :---: | :---: | :---: |
-| ![Home](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/assets/Home-screen.png) | ![Profile](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/assets/user-profile.png) | ![Verdict](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/assets/verdict-screen.png) |
+| <img src="assets/Home-screen.png" width="100%"> | <img src="assets/user-profile.png" width="100%"> | <img src="assets/verdict-screen.png" width="100%"> |
 
 | Nearby Offers | Card Swipe Detail | Invite Friends |
 | :---: | :---: | :---: |
-| ![Nearby](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/assets/nearby-location.png) | ![Card Detail](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/assets/card-detail-swipe.png) | ![Invite](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/assets/invite-friends.png) |
-
+| <img src="assets/nearby-location.png" width="100%"> | <img src="assets/card-detail-swipe.png" width="100%"> | <img src="assets/invite-friends.png" width="100%"> |
