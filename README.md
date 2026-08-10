@@ -23,10 +23,12 @@ An automated n8n workflow designed to process incoming webhook events and levera
 ## 🎨 Startup UI/UX Product Design & Figma Wireframes
 
 Below are the core product interface mockups designed in Figma for the platform:
+
 | Home Screen | User Profile | Verdict & AI Decision |
 | :---: | :---: | :---: |
-| ![Home](assets/Home-screen.png) | ![Profile](assets/user-profile.png) | ![Verdict](assets/verdict-screen.png) |
+| ![Home](./assets/Home-screen.png) | ![Profile](./assets/user-profile.png) | ![Verdict](./assets/verdict-screen.png) |
 
 | Nearby Offers | Card Swipe Detail | Invite Friends |
 | :---: | :---: | :---: |
-| ![Nearby](assets/nearby-location.png) | ![Card Detail](assets/card-detail-swipe.png) | ![Invite](assets/invite-friends.png) |
+| ![Nearby](./assets/nearby-location.png) | ![Card Detail](./assets/card-detail-swipe.png) | ![Invite](./assets/invite-friends.png) |
+
