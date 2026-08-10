@@ -12,7 +12,8 @@ An automated n8n workflow designed to process incoming webhook events and levera
 3. **Automated Output:** Returns structured Markdown summary ready for downstream notifications or databases.
 
 ### 📂 Repository Structure
-* `My workflow.json` — Importable n8n workflow definition file.
+* [My workflow.json](./My%20workflow.json) — Importable n8n workflow definition file.
+
 
 ---
 *Maintained as part of my AI Engineering & Operations Portfolio.*
