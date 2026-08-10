@@ -1,27 +1,26 @@
- <div align="center">
+<div align="center">
 
 # AI Automation Blueprints
 
 **Event-driven n8n + LLM workflows that turn raw business events into decisions.**
 
-[![n8n](https://img.shields.io/badge/n8n-workflow_engine-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io)
-[![OpenAI](https://img.shields.io/badge/openai-gpt--4o--mini-412991?style=for-the-badge&logo=openai&logoColor=white)](https://platform.openai.com)
-[![JSON](https://img.shields.io/badge/import-ready_json-000000?style=for-the-badge&logo=json&logoColor=white)](#quickstart)
-[![License](https://img.shields.io/badge/license-MIT-3178C6?style=for-the-badge)](./LICENSE)
-
+![n8n](https://img.shields.io/badge/n8n-workflow_engine-FF6D5A?style=flat-square&logo=n8n&logoColor=white)
+![OpenAI](https://img.shields.io/badge/openai-gpt--4o--mini-412991?style=flat-square&logo=openai&logoColor=white)
+![JSON](https://img.shields.io/badge/import-ready_json-000000?style=flat-square&logo=json&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-3178C6?style=flat-square)
 ![Workflows](https://img.shields.io/badge/workflows-2_live-FF6D5A?style=flat-square)
 ![Status](https://img.shields.io/badge/status-active_development-FFA000?style=flat-square)
 [![Stars](https://img.shields.io/github/stars/cillisandrea4-ops/AI-automation-Blueprints?style=flat-square&color=FFD700)](https://github.com/cillisandrea4-ops/AI-automation-Blueprints/stargazers)
 [![Last commit](https://img.shields.io/github/last-commit/cillisandrea4-ops/AI-automation-Blueprints?style=flat-square&color=9E9E9E)](https://github.com/cillisandrea4-ops/AI-automation-Blueprints/commits/main)
 
-[Quickstart](#quickstart) · [Blueprints](#blueprints) · [Architecture](#architecture) · [Design decisions](#design-decisions) · [Results](#results) · [Structure](#repository-structure)
+[Quickstart](#quickstart) · [Blueprints](#blueprints) · [Architecture](#architecture) · [Design decisions](#design-decisions) · [Results](#results) · [Documentation](#documentation)
 
 </div>
 
 ---
 
 > [!NOTE]
-> **What this is.** A small, opinionated library of `n8n` workflows that call LLMs to compress business events into decision-ready output. Each blueprint is a downloadable JSON — import it into your own n8n instance in under two minutes.
+> **What this is.** A small, opinionated library of <code>n8n</code> workflows that call LLMs to compress business events into decision-ready output. Each blueprint is a downloadable JSON — import it into your own n8n instance in under two minutes.
 
 > [!TIP]
 > **Why it exists.** I co-found and run an early-stage product with no back-office. Reporting and lead triage had to run themselves. These are the systems that replaced that manual work, published as reusable patterns rather than as a demo.
@@ -30,11 +29,11 @@
 
 ## Blueprints
 
-| # | Blueprint | Problem it solves | Trigger | Model | Status |
-|:-:|:--|:--|:--|:--|:--|
-| 01 | **[AI Executive Summarizer](./workflows/ai-executive-summarizer.json)** | Turns raw webhook payloads into a three-bullet executive brief | Webhook | `gpt-4o-mini` | ![live](https://img.shields.io/badge/live-00C853?style=flat-square) |
-| 02 | **[AI Lead Scoring Agent](./workflows/ai-lead-scoring-agent.json)** | Scores inbound leads 0–100 and routes them by intent | Webhook / CRM | `gpt-4o-mini` | ![live](https://img.shields.io/badge/live-00C853?style=flat-square) |
-| 03 | **Churn Signal Watcher** | Flags at-risk accounts from product-usage drops | Cron | `gpt-4o-mini` | ![planned](https://img.shields.io/badge/planned-9E9E9E?style=flat-square) |
+| Blueprint | Problem it solves | Trigger | Model | Status |
+|:--|:--|:--|:--|:--|
+| **[AI Executive Summarizer](./workflows/ai-executive-summarizer.json)** | Turns raw webhook payloads into a three-bullet executive brief | Webhook | <code>gpt&#8209;4o&#8209;mini</code> | ![live](https://img.shields.io/badge/live-00C853?style=flat-square) |
+| **[AI Lead Scoring Agent](./workflows/ai-lead-scoring-agent.json)** | Scores inbound leads 0–100 and routes them by intent | Webhook / CRM | <code>gpt&#8209;4o&#8209;mini</code> | ![live](https://img.shields.io/badge/live-00C853?style=flat-square) |
+| **Churn Signal Watcher** | Flags at-risk accounts from product-usage drops | Cron | <code>gpt&#8209;4o&#8209;mini</code> | ![planned](https://img.shields.io/badge/planned-9E9E9E?style=flat-square) |
 
 ---
 
@@ -54,7 +53,7 @@ flowchart LR
     E -->|yes| F["Markdown brief<br/><i>3 actionable takeaways</i>"]
     E -->|no| G["Strict re-prompt<br/><i>bounded retry</i>"]
     G --> D
-    G -.->|retry budget spent| I["Dead-letter queue"]
+    G -.->|retry budget spent| I["Dead-letter queue<br/><i>manual review</i>"]
     F --> H["Delivery<br/>Slack · Notion · DB"]
 
     style A fill:#0D1117,stroke:#30363D,color:#E6E6E6
@@ -70,9 +69,11 @@ flowchart LR
 
 ### Design decisions
 
+Every choice below cost something. The trade-off column is the part worth reading.
+
 | Decision | Rationale | Trade-off accepted |
 |:--|:--|:--|
-| `gpt-4o-mini` over a frontier model | The task is extraction and compression, not multi-step reasoning. A small model holds output quality at a fraction of the cost per run. | Degrades on ambiguous payloads. Acceptable: inputs are schema-validated upstream. |
+| <code>gpt&#8209;4o&#8209;mini</code> over a frontier model | The task is extraction and compression, not multi-step reasoning. A small model holds output quality at a fraction of the cost per run. | Degrades on ambiguous payloads. Acceptable: inputs are schema-validated upstream. |
 | Strict JSON output contract | Downstream nodes never parse free text. Malformed output hits a validation branch instead of silently corrupting the store. | One extra call on failure. |
 | Idempotent webhook handling | Duplicate deliveries from the source system don't produce duplicate briefs. | Requires an event-ID cache. |
 | Credentials in n8n's credential store | Exported JSON is safe to publish — no keys, no internal endpoints. | Importers must supply their own credentials. |
@@ -119,12 +120,12 @@ flowchart LR
 ## Results
 
 > [!IMPORTANT]
-> Numbers without methodology are noise. Each figure states how it was produced, so it can be reproduced or challenged. Raw data lives in [`docs/benchmarks.md`](./docs/benchmarks.md).
+> Numbers without methodology are noise. Each figure states how it was produced, so it can be reproduced or challenged. Raw measurement data lives in [`docs/benchmarks.md`](./docs/benchmarks.md).
 
 | Metric | Result | How it was measured |
 |:--|:--|:--|
 | Time to insight | `45 min → ~3 s` | Baseline: the same brief compiled by hand, timed over `N` iterations. Automated: median end-to-end execution time from the n8n execution log. |
-| Cost per run | `~92% ↓` | `gpt-4o-mini` vs. the frontier model used in the first prototype, identical prompt and output length. Token counts from the API usage log. |
+| Cost per run | `~92% ↓` | <code>gpt&#8209;4o&#8209;mini</code> vs. the frontier model used in the first prototype, identical prompt and output length. Token counts from the API usage log. |
 | Reliability | `99.9%` | Successful ÷ total executions in the n8n log over `N` runs on schema-valid payloads. Malformed-payload rejections excluded by design. |
 
 <!-- PRIMA DI PUBBLICARE: sostituisci ogni `N` con run reali + periodo.
@@ -138,7 +139,7 @@ flowchart LR
 
 **Prerequisites** — an n8n instance (self-hosted or cloud) and an OpenAI API key.
 
-**1. Clone**
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/cillisandrea4-ops/AI-automation-Blueprints.git
@@ -157,23 +158,25 @@ n8n → Workflows → Import from File → workflows/ai-executive-summarizer.jso
 cp .env.example .env
 ```
 
-Then fill it in:
+Then fill in your values:
 
-```ini
+```bash
 OPENAI_API_KEY=sk-your-key-here
 N8N_WEBHOOK_PATH=executive-summary
 ```
 
 > [!WARNING]
-> Keys belong in n8n's credential store, never in a committed workflow file. `.env` is gitignored — keep it that way.
+> Keys belong in n8n's credential store, never inside a committed workflow file. `.env` is gitignored — keep it that way.
 
-**4. Activate and fire a test event**
+**4. Activate the workflow and fire a test event**
 
 ```bash
 curl -X POST https://<your-n8n-host>/webhook/executive-summary \
   -H "Content-Type: application/json" \
   -d '{"source":"test","event":"weekly_pipeline","deals_closed":14}'
 ```
+
+A well-formed request returns a three-bullet Markdown brief. Anything that fails schema validation is rejected before it reaches the model.
 
 ---
 
@@ -194,7 +197,15 @@ AI-automation-Blueprints/
 └── README.md
 ```
 
-**Jump to:** [`architecture.md`](./docs/architecture.md) · [`benchmarks.md`](./docs/benchmarks.md) · [`executive-summary.md`](./prompts/executive-summary.md)
+## Documentation
+
+| File | What's inside |
+|:--|:--|
+| [`docs/architecture.md`](./docs/architecture.md) | Node-by-node walkthrough, error handling, retry and dead-letter logic |
+| [`docs/benchmarks.md`](./docs/benchmarks.md) | Raw timing and token-cost data behind the Results table |
+| [`prompts/executive-summary.md`](./prompts/executive-summary.md) | System prompt and the JSON output contract enforced downstream |
+| [`workflows/`](./workflows) | Import-ready blueprint JSON files |
+| [`.env.example`](./.env.example) | Required environment variables |
 
 ---
 
@@ -210,7 +221,7 @@ AI-automation-Blueprints/
 
 ## Related work — NAO! product design
 
-Interface work from **NAO!**, the consumer product I co-found. Different domain, same discipline: designing the surface and shipping the system underneath.
+Interface work from **NAO!**, the consumer product I co-found. A different domain from the blueprints above, included because it's the same discipline: designing the surface and shipping the system underneath it.
 
 | Home Screen | User Profile | Verdict & AI Decision |
 |:---:|:---:|:---:|
@@ -219,6 +230,8 @@ Interface work from **NAO!**, the consumer product I co-found. Different domain,
 | Nearby Offers | Card Swipe Detail | Invite Friends |
 |:---:|:---:|:---:|
 | <img src="https://github.com/user-attachments/assets/820d0d7e-845e-487f-b26c-df71d98dc64c" width="100%"> | <img src="https://github.com/user-attachments/assets/cf1d1e2c-6821-47c8-8ea7-495aceffdad5" width="100%"> | <img src="https://github.com/user-attachments/assets/5a247a05-c127-47bd-a010-c946f021edff" width="100%"> |
+
+<sub>Screenshots show the Italian localization — NAO!'s launch market. The product ships with an English locale; copy is externalized, not hardcoded.</sub>
 
 ---
 
@@ -237,7 +250,7 @@ Interface work from **NAO!**, the consumer product I co-found. Different domain,
 
 ## Contributing
 
-Issues and pull requests are welcome — particularly new blueprints, prompt improvements, and benchmark data from other n8n setups. Open an issue before large changes so we can agree on scope.
+Issues and pull requests are welcome — particularly new blueprints, prompt improvements, and benchmark data from other n8n setups. Open an issue before large changes so we can agree on scope first.
 
 ## License
 
@@ -253,11 +266,10 @@ Co-founder & CEO — AI-powered consumer products.
 BSc Business Information & Communication Management, SAA — University of Turin.
 I work where product, automation and go-to-market overlap.
 
-[![LinkedIn](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/IL-TUO-HANDLE)
-[![Email](https://img.shields.io/badge/email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:LA-TUA@EMAIL.com)
-[![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cillisandrea4-ops)
+[![LinkedIn](https://img.shields.io/badge/linkedin-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/IL-TUO-HANDLE)
+[![Email](https://img.shields.io/badge/email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:LA-TUA@EMAIL.com)
+[![GitHub](https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/cillisandrea4-ops)
 
 <sub>If a blueprint saves you an afternoon, a star is appreciated.</sub>
 
-</div>
 </div>
