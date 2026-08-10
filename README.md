@@ -1,4 +1,4 @@
-<div align="center">
+@<div align="center">
 
 # AI Automation Blueprints
 
@@ -234,7 +234,7 @@ Business Information & Communication Management @ SAA, University of Turin.
 I work where **product, automation and go-to-market** overlap.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andreacillis)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:LA-TUA@EMAIL.com)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cillisandrea4@outlook.it)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cillisandrea4-ops)
 
 <sub>MIT Licensed · If a blueprint saves you an afternoon, a ⭐ is appreciated.</sub>
