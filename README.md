@@ -30,8 +30,8 @@ An automated n8n workflow designed to process incoming webhook events and levera
 
 ## Direct Workflow Downloads (JSON)
 
-- [AI Executive Summarizer Workflow](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/ai-executive-summarizer.json)
-- [AI Lead Scoring Agent Workflow](https://raw.githubusercontent.com/cillisandrea4-ops/AI-automation-Blueprints/main/ai-lead-scoring-agent.json)
+- [AI Executive Summarizer Workflow](./ai-executive-summarizer.json)
+- [AI Lead Scoring Agent Workflow](./ai-lead-scoring-agent.json)
 1. **Clone Repository:**
    ```bash
    git clone [https://github.com/cillisandrea4-ops/AI-automation-Blueprints.git](https://github.com/cillisandrea4-ops/AI-automation-Blueprints.git)
