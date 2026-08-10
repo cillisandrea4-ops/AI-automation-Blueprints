@@ -26,6 +26,7 @@ An automated n8n workflow designed to process incoming webhook events and levera
 3. **Automated Output:** Returns structured Markdown summary ready for downstream notifications or databases.
 
 ---
+<img width="1470" height="956" alt="Screenshot 2026-08-09 alle 21 17 06" src="https://github.com/user-attachments/assets/66156cfa-5e4b-4bca-9d20-d330a652b071" />
 
 ## ⚡ Quick Start
 
